@@ -31,7 +31,10 @@
                                     <constraint firstAttribute="width" constant="100" id="m5W-Vr-qb5"/>
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="26" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Button" backgroundImage="dateButton"/>
+                                <state key="normal" title="1" backgroundImage="dateButton"/>
+                                <connections>
+                                    <action selector="controlButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RK2-aQ-3l9"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="January" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yL7-PO-U4h">
                                 <rect key="frame" x="270" y="275" width="61" height="21"/>
@@ -46,6 +49,10 @@
                                     <constraint firstAttribute="height" constant="30" id="gJS-Q2-eGn"/>
                                 </constraints>
                                 <state key="normal" title="Calendar"/>
+                                <connections>
+                                    <action selector="calendarButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RH1-df-F2k"/>
+                                    <segue destination="Axk-Cq-6ny" kind="show" id="WoF-ay-AcD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -68,6 +75,8 @@
                             </mask>
                         </variation>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="control" destination="uRC-MI-Ot4" id="OYj-DX-aPr"/>
                         <outlet property="controlButton" destination="XE7-P4-Ytr" id="eNw-m8-4mV"/>
@@ -76,6 +85,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="325" y="387"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="sMa-oO-rGT">
+            <objects>
+                <tableViewController storyboardIdentifier="datesTVC" id="Axk-Cq-6ny" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ANy-c1-NOc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zua-9K-3w3">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zua-9K-3w3" id="UiD-H4-Pg2">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Axk-Cq-6ny" id="GRm-cC-CHO"/>
+                            <outlet property="delegate" destination="Axk-Cq-6ny" id="mqY-iS-13Q"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SD5-K7-bdL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1062" y="387"/>
         </scene>
     </scenes>
     <resources>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		63272CFD1D3287E1000DCB66 /* ControlRotationRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63272CFC1D3287E1000DCB66 /* ControlRotationRecognizer.m */; };
+		63B21B3B1D3BBBD1008ACB91 /* CustomDatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B21B3A1D3BBBD1008ACB91 /* CustomDatesTableViewController.m */; };
 		63BCCE0D1D294FB4006C50B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BCCE0C1D294FB4006C50B7 /* main.m */; };
 		63BCCE101D294FB4006C50B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BCCE0F1D294FB4006C50B7 /* AppDelegate.m */; };
 		63BCCE131D294FB4006C50B7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BCCE121D294FB4006C50B7 /* ViewController.m */; };
@@ -20,6 +21,8 @@
 /* Begin PBXFileReference section */
 		63272CFB1D3287E1000DCB66 /* ControlRotationRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlRotationRecognizer.h; sourceTree = "<group>"; };
 		63272CFC1D3287E1000DCB66 /* ControlRotationRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlRotationRecognizer.m; sourceTree = "<group>"; };
+		63B21B391D3BBBD1008ACB91 /* CustomDatesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDatesTableViewController.h; sourceTree = "<group>"; };
+		63B21B3A1D3BBBD1008ACB91 /* CustomDatesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDatesTableViewController.m; sourceTree = "<group>"; };
 		63BCCE081D294FB4006C50B7 /* ClueTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClueTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BCCE0C1D294FB4006C50B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		63BCCE0E1D294FB4006C50B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -75,6 +78,8 @@
 				63BCCE1F1D294FB4006C50B7 /* Info.plist */,
 				63BCCE171D294FB4006C50B7 /* ClueTest.xcdatamodeld */,
 				63BCCE0B1D294FB4006C50B7 /* Supporting Files */,
+				63B21B391D3BBBD1008ACB91 /* CustomDatesTableViewController.h */,
+				63B21B3A1D3BBBD1008ACB91 /* CustomDatesTableViewController.m */,
 			);
 			path = ClueTest;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 			files = (
 				63272CFD1D3287E1000DCB66 /* ControlRotationRecognizer.m in Sources */,
 				63BCCE131D294FB4006C50B7 /* ViewController.m in Sources */,
+				63B21B3B1D3BBBD1008ACB91 /* CustomDatesTableViewController.m in Sources */,
 				63BCCE101D294FB4006C50B7 /* AppDelegate.m in Sources */,
 				63BCCE191D294FB4006C50B7 /* ClueTest.xcdatamodeld in Sources */,
 				63BCCE0D1D294FB4006C50B7 /* main.m in Sources */,

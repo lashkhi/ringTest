@@ -18,12 +18,11 @@
 
 @implementation ControlRotationRecognizer
 
-- (instancetype)initWithControl:(UIImageView *)control {
+- (instancetype)initWithControl:(UIImageView *)control centerPoint:(CGPoint)centerPoint {
     if (self = [super init]) {
-        self.centerPoint = CGPointMake(control.frame.origin.x + control.frame.size.width / 2,
-                                       control.frame.origin.y + control.frame.size.height / 2);
+        self.centerPoint = centerPoint;
         self.outerR = (control.frame.size.width / 2)  + 5;
-        self.innerR = 50;
+        self.innerR = 100;
     }
     return self;
 }
@@ -78,8 +77,14 @@
 
     
     CGFloat distance = [self distanceBetweenPoints:self.centerPoint point2:nowPoint];
+    NSLog(@"Distance: %f", distance);
+    NSLog(@"Inner radius : %f", self.innerR);
+    NSLog(@"Outer radius : %f", self.outerR);
     if (self.innerR <= distance && distance <= self.outerR) {
+        
         CGFloat angle = [self angleBetweenLinesInDegrees:self.centerPoint endPointLineA:prevPoint beginLineB:self.centerPoint endPointLineB:nowPoint];
+        
+        NSLog(@"Angle: %f", angle);
         
         if (angle > 180)
         {
@@ -90,14 +95,11 @@
             angle += 360;
         }
         
-        // sum up single steps
         self.angle += angle;
-        
-        // call delegate
+
         [self.customDelegate rotation:angle];
     }
     else {
-        // finger moved outside the area
         self.state = UIGestureRecognizerStateFailed;
     }
 }
@@ -109,7 +111,6 @@
     if (self.state == UIGestureRecognizerStatePossible)
     {
         self.state = UIGestureRecognizerStateRecognized;
-        [self.customDelegate finalAngle:self.angle];
     }
     else
     {

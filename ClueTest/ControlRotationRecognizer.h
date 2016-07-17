@@ -10,17 +10,13 @@
 #import <UIKit/UIGestureRecognizerSubclass.h>
 
 @protocol ControlRotationRecognizerDelegate
-
-- (void)finalAngle:(CGFloat)angle;
 - (void)rotation:(CGFloat) angle;
-
-
 @end
 
 @interface ControlRotationRecognizer : UIGestureRecognizer
 
 @property (nonatomic, weak) id <ControlRotationRecognizerDelegate> customDelegate;
 
-- (instancetype)initWithControl:(UIImageView *)control;
+- (instancetype)initWithControl:(UIImageView *)control centerPoint:(CGPoint)centerPoint;
 
 @end
