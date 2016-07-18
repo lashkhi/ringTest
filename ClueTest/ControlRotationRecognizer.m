@@ -18,12 +18,18 @@
 
 @implementation ControlRotationRecognizer
 
+static const NSInteger additionalInset = 5;
+static const NSInteger innerRadius = 100;
+static const NSInteger circleFullDegree = 360;
+static const NSInteger circleHalfDegree = 180;
+
+
 - (instancetype)initWithControl:(UIImageView *)control {
     if (self = [super init]) {
         self.centerPoint = CGPointMake(control.frame.origin.x + control.frame.size.width / 2,
                                                              control.frame.origin.y + control.frame.size.height / 2);
-        self.outerR = (control.frame.size.width / 2)  + 5;
-        self.innerR = 100;
+        self.outerR = (control.frame.size.width / 2)  + additionalInset;
+        self.innerR = innerRadius;
     }
     return self;
 }
@@ -43,7 +49,7 @@
     CGFloat atanA = atan2(a, b);
     CGFloat atanB = atan2(c, d);
     
-    return (atanA - atanB) * 180 / M_PI;
+    return (atanA - atanB) * circleHalfDegree / M_PI;
 }
 
 
@@ -68,13 +74,13 @@
         
         CGFloat angle = [self angleBetweenLinesInDegrees:self.centerPoint endPointLineA:prevPoint beginLineB:self.centerPoint endPointLineB:nowPoint];
         
-        if (angle > 180)
+        if (angle > circleHalfDegree )
         {
-            angle -= 360;
+            angle -= circleFullDegree;
         }
-        else if (angle < -180)
+        else if (angle < -circleHalfDegree)
         {
-            angle += 360;
+            angle += circleFullDegree;
         }
         
         self.angle += angle;
