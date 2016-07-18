@@ -12,7 +12,7 @@
 #import "CalendarDataManager.h"
 
 
-@interface ViewController ()
+@interface ViewController () <UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *control;
 @property (weak, nonatomic) IBOutlet UIButton *controlButton;
 @property (assign, nonatomic) CGFloat imageAngle;
@@ -37,11 +37,14 @@
 }
 
 - (void)setupControl {
-    CGPoint centerPoint = CGPointMake(self.control.frame.origin.x + self.control.frame.size.width / 2,
-                                      self.control.frame.origin.y + self.control.frame.size.height / 2);
-    self.rotationRecognizer = [[ControlRotationRecognizer alloc] initWithControl:self.control centerPoint:centerPoint];
-    self.rotationRecognizer.customDelegate = self;
-    //[self.view addGestureRecognizer:self.rotationRecognizer];
+    if (!self.rotationRecognizer) {
+        CGPoint centerPoint = CGPointMake(self.control.frame.origin.x + self.control.frame.size.width / 2,
+                                          self.control.frame.origin.y + self.control.frame.size.height / 2);
+        self.rotationRecognizer = [[ControlRotationRecognizer alloc] initWithControl:self.control centerPoint:centerPoint];
+        self.rotationRecognizer.customDelegate = self;
+        self.rotationRecognizer.delegate = self;
+        [self.view addGestureRecognizer:self.rotationRecognizer];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -80,18 +83,23 @@
         if ([customDate.day integerValue] == date) {
             self.controlButton.enabled = NO;
             break;
-            NSLog(@"selected");
         } else {
             self.controlButton.enabled = YES;
         }
     }
 }
+
 - (IBAction)controlButtonTapped:(id)sender {
     [self.calendarDataManager saveDate:[self.controlButton.titleLabel.text integerValue]];
     self.datesArray = [self.calendarDataManager savedDates];
+    [self updateButtonStateForDate:[self.controlButton.titleLabel.text integerValue]];
 }
-- (IBAction)calendarButtonTapped:(id)sender {
-   // [self.navigationController pushViewController:self.customDatesTableViewController animated:YES];
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if ([touch.view isKindOfClass:[UIButton class]]) {
+        return NO;
+    }
+    return YES;
 }
 
 

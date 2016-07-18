@@ -52,7 +52,6 @@
                                 </constraints>
                                 <state key="normal" title="Calendar"/>
                                 <connections>
-                                    <action selector="calendarButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RH1-df-F2k"/>
                                     <segue destination="Axk-Cq-6ny" kind="show" id="AE3-UL-Yk1"/>
                                 </connections>
                             </button>

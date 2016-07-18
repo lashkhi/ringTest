@@ -42,7 +42,6 @@
     CGFloat atanA = atan2(a, b);
     CGFloat atanB = atan2(c, d);
     
-    // convert radiants to degrees
     return (atanA - atanB) * 180 / M_PI;
 }
 
@@ -64,16 +63,8 @@
     }
     
     CGPoint nowPoint  = [[touches anyObject] locationInView: self.view];
-    NSLog(@"%@", NSStringFromCGPoint(nowPoint));
-
     CGPoint prevPoint = [[touches anyObject] previousLocationInView: self.view];
-    NSLog(@"%@", NSStringFromCGPoint(prevPoint));
-
-    
     CGFloat distance = [self distanceBetweenPoints:self.centerPoint point2:nowPoint];
-    NSLog(@"Distance: %f", distance);
-    NSLog(@"Inner radius : %f", self.innerR);
-    NSLog(@"Outer radius : %f", self.outerR);
     if (self.innerR <= distance && distance <= self.outerR) {
         
         CGFloat angle = [self angleBetweenLinesInDegrees:self.centerPoint endPointLineA:prevPoint beginLineB:self.centerPoint endPointLineB:nowPoint];
@@ -111,6 +102,14 @@
     
     self.state = UIGestureRecognizerStateFailed;
     self.angle = 0;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    
+    if ([touch.view isKindOfClass:[UIButton class]]) {//change it to your condition
+        return NO;
+    }
+    return YES;
 }
 
 
