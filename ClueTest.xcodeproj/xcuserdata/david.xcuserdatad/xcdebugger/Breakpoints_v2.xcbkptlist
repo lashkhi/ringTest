@@ -38,16 +38,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ClueTest/ViewController.m"
-            timestampString = "490453999.801751"
+            timestampString = "490564710.007585"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "-setupControl"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-controlButtonTapped:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ClueTest/ViewController.m"
-            timestampString = "490454048.115015"
+            filePath = "ClueTest/CalendarDataManager.m"
+            timestampString = "490563429.969996"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "-prepareForSegue:sender:"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "-saveDate:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

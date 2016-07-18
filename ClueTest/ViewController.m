@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ControlRotationRecognizer.h"
 #import "CustomDatesTableViewController.h"
+#import "CalendarDataManager.h"
 
 
 @interface ViewController ()
@@ -16,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *controlButton;
 @property (assign, nonatomic) CGFloat imageAngle;
 @property (strong, nonatomic) ControlRotationRecognizer *rotationRecognizer;
+@property (strong, nonatomic) CustomDatesTableViewController *customDatesTableViewController;
+@property (strong, nonatomic) CalendarDataManager *calendarDataManager;
+@property (strong, nonatomic) NSArray *datesArray;
 
 @end
 
@@ -24,6 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.imageAngle = 0;
+    self.calendarDataManager = [CalendarDataManager new];
+    self.datesArray = [self.calendarDataManager savedDates];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,7 +41,7 @@
                                       self.control.frame.origin.y + self.control.frame.size.height / 2);
     self.rotationRecognizer = [[ControlRotationRecognizer alloc] initWithControl:self.control centerPoint:centerPoint];
     self.rotationRecognizer.customDelegate = self;
-    [self.view addGestureRecognizer:self.rotationRecognizer];
+    //[self.view addGestureRecognizer:self.rotationRecognizer];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -43,11 +49,10 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
+    self.customDatesTableViewController = [segue destinationViewController];
 }
 
-- (void)rotation:(CGFloat)angle
-{
+- (void)rotation:(CGFloat)angle {
     self.imageAngle += angle;
     if (self.imageAngle > 360)
         self.imageAngle -= 360;
@@ -55,12 +60,8 @@
         self.imageAngle += 360;
     
     self.control.transform = CGAffineTransformMakeRotation(self.imageAngle *  M_PI / 180);
-
-    NSLog(@"Image angle : %f", self.imageAngle);
     [self updateDate];
 }
-
-
 
 - (void)updateDate {
     NSInteger date;
@@ -70,11 +71,23 @@
         date = self.imageAngle / 11.6 + 1;
     }
     [self.controlButton setTitle:[NSString stringWithFormat:@"%ld", (long)date] forState:UIControlStateNormal];
-}
-- (IBAction)controlButtonTapped:(id)sender {
     
 }
-- (IBAction)calendarButtonTapped:(id)sender {
+
+- (void)updateButtonStateForDate:(NSInteger)date {
+    if ([self.datesArray containsObject:@(date)]) {
+        self.controlButton.selected = YES;
+    } else {
+        self.controlButton.selected = NO;
+    }
 }
+- (IBAction)controlButtonTapped:(id)sender {
+    [self.calendarDataManager saveDate:[self.controlButton.titleLabel.text integerValue]];
+    self.datesArray = [self.calendarDataManager savedDates];
+}
+- (IBAction)calendarButtonTapped:(id)sender {
+   // [self.navigationController pushViewController:self.customDatesTableViewController animated:YES];
+}
+
 
 @end

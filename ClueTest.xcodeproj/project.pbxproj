@@ -16,6 +16,9 @@
 		63BCCE191D294FB4006C50B7 /* ClueTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63BCCE171D294FB4006C50B7 /* ClueTest.xcdatamodeld */; };
 		63BCCE1B1D294FB4006C50B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BCCE1A1D294FB4006C50B7 /* Assets.xcassets */; };
 		63BCCE1E1D294FB4006C50B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BCCE1C1D294FB4006C50B7 /* LaunchScreen.storyboard */; };
+		BBB3A6601D3CD17000376F3E /* Dates+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB3A65D1D3CD17000376F3E /* Dates+CoreDataProperties.m */; };
+		BBB3A6611D3CD17000376F3E /* Dates.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB3A65F1D3CD17000376F3E /* Dates.m */; };
+		BBB3A6651D3CD2F100376F3E /* CalendarDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB3A6641D3CD2F100376F3E /* CalendarDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,12 @@
 		63BCCE1A1D294FB4006C50B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63BCCE1D1D294FB4006C50B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63BCCE1F1D294FB4006C50B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBB3A65C1D3CD17000376F3E /* Dates+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Dates+CoreDataProperties.h"; sourceTree = "<group>"; };
+		BBB3A65D1D3CD17000376F3E /* Dates+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Dates+CoreDataProperties.m"; sourceTree = "<group>"; };
+		BBB3A65E1D3CD17000376F3E /* Dates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dates.h; sourceTree = "<group>"; };
+		BBB3A65F1D3CD17000376F3E /* Dates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dates.m; sourceTree = "<group>"; };
+		BBB3A6631D3CD2F100376F3E /* CalendarDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDataManager.h; sourceTree = "<group>"; };
+		BBB3A6641D3CD2F100376F3E /* CalendarDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,18 +77,15 @@
 			children = (
 				63BCCE0E1D294FB4006C50B7 /* AppDelegate.h */,
 				63BCCE0F1D294FB4006C50B7 /* AppDelegate.m */,
-				63272CFB1D3287E1000DCB66 /* ControlRotationRecognizer.h */,
-				63272CFC1D3287E1000DCB66 /* ControlRotationRecognizer.m */,
-				63BCCE111D294FB4006C50B7 /* ViewController.h */,
-				63BCCE121D294FB4006C50B7 /* ViewController.m */,
+				BBB3A65B1D3CD14B00376F3E /* View Controllers */,
+				63E7D22D1D3D66D600960CC5 /* Views */,
+				63E7D22C1D3D668100960CC5 /* Model */,
 				63BCCE141D294FB4006C50B7 /* Main.storyboard */,
 				63BCCE1A1D294FB4006C50B7 /* Assets.xcassets */,
 				63BCCE1C1D294FB4006C50B7 /* LaunchScreen.storyboard */,
 				63BCCE1F1D294FB4006C50B7 /* Info.plist */,
 				63BCCE171D294FB4006C50B7 /* ClueTest.xcdatamodeld */,
 				63BCCE0B1D294FB4006C50B7 /* Supporting Files */,
-				63B21B391D3BBBD1008ACB91 /* CustomDatesTableViewController.h */,
-				63B21B3A1D3BBBD1008ACB91 /* CustomDatesTableViewController.m */,
 			);
 			path = ClueTest;
 			sourceTree = "<group>";
@@ -90,6 +96,47 @@
 				63BCCE0C1D294FB4006C50B7 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		63E7D22C1D3D668100960CC5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BBB3A6631D3CD2F100376F3E /* CalendarDataManager.h */,
+				BBB3A6641D3CD2F100376F3E /* CalendarDataManager.m */,
+				BBB3A6621D3CD17700376F3E /* Core Data */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		63E7D22D1D3D66D600960CC5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				63272CFB1D3287E1000DCB66 /* ControlRotationRecognizer.h */,
+				63272CFC1D3287E1000DCB66 /* ControlRotationRecognizer.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		BBB3A65B1D3CD14B00376F3E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				63B21B391D3BBBD1008ACB91 /* CustomDatesTableViewController.h */,
+				63B21B3A1D3BBBD1008ACB91 /* CustomDatesTableViewController.m */,
+				63BCCE111D294FB4006C50B7 /* ViewController.h */,
+				63BCCE121D294FB4006C50B7 /* ViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BBB3A6621D3CD17700376F3E /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				BBB3A65C1D3CD17000376F3E /* Dates+CoreDataProperties.h */,
+				BBB3A65D1D3CD17000376F3E /* Dates+CoreDataProperties.m */,
+				BBB3A65E1D3CD17000376F3E /* Dates.h */,
+				BBB3A65F1D3CD17000376F3E /* Dates.m */,
+			);
+			name = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +212,9 @@
 				63272CFD1D3287E1000DCB66 /* ControlRotationRecognizer.m in Sources */,
 				63BCCE131D294FB4006C50B7 /* ViewController.m in Sources */,
 				63B21B3B1D3BBBD1008ACB91 /* CustomDatesTableViewController.m in Sources */,
+				BBB3A6611D3CD17000376F3E /* Dates.m in Sources */,
+				BBB3A6601D3CD17000376F3E /* Dates+CoreDataProperties.m in Sources */,
+				BBB3A6651D3CD2F100376F3E /* CalendarDataManager.m in Sources */,
 				63BCCE101D294FB4006C50B7 /* AppDelegate.m in Sources */,
 				63BCCE191D294FB4006C50B7 /* ClueTest.xcdatamodeld in Sources */,
 				63BCCE0D1D294FB4006C50B7 /* main.m in Sources */,

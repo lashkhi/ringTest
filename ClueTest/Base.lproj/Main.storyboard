@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="T8W-a0-59E">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -30,6 +30,7 @@
                                     <constraint firstAttribute="height" constant="100" id="8an-q9-bnC"/>
                                     <constraint firstAttribute="width" constant="100" id="m5W-Vr-qb5"/>
                                 </constraints>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="26" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="1" backgroundImage="dateButton"/>
                                 <connections>
@@ -51,7 +52,7 @@
                                 <state key="normal" title="Calendar"/>
                                 <connections>
                                     <action selector="calendarButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RH1-df-F2k"/>
-                                    <segue destination="Axk-Cq-6ny" kind="show" id="WoF-ay-AcD"/>
+                                    <segue destination="Axk-Cq-6ny" kind="show" id="xH5-38-zY3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -75,6 +76,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="BFK-CR-i0u"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
@@ -84,19 +86,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="325" y="387"/>
+            <point key="canvasLocation" x="361" y="396"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="Mty-oN-E8d">
+            <objects>
+                <navigationController id="T8W-a0-59E" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f11-uK-uYM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8EB-K6-rOb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s7X-Kn-d5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-444" y="396"/>
+        </scene>
+        <!--Custom Dates Table View Controller-->
         <scene sceneID="sMa-oO-rGT">
             <objects>
-                <tableViewController storyboardIdentifier="datesTVC" id="Axk-Cq-6ny" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="datesTVC" id="Axk-Cq-6ny" customClass="CustomDatesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ANy-c1-NOc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zua-9K-3w3">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zua-9K-3w3" id="UiD-H4-Pg2">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>

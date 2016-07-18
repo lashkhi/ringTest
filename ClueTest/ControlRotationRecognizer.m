@@ -53,12 +53,6 @@
 {
     [super touchesBegan:touches withEvent:event];
     
-    if ([touches count] != 1)
-    {
-        self.state = UIGestureRecognizerStateFailed;
-        
-        return;
-    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -107,15 +101,6 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesEnded:touches withEvent:event];
-    
-    if (self.state == UIGestureRecognizerStatePossible)
-    {
-        self.state = UIGestureRecognizerStateRecognized;
-    }
-    else
-    {
-        self.state = UIGestureRecognizerStateFailed;
-    }
     
     self.angle = 0;
 }
