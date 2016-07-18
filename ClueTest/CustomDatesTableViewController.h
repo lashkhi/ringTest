@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CustomDatesTableViewController : UITableViewController
+@property (strong, nonatomic) NSArray *selectedDates;
 
 @end

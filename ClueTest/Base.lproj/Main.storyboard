@@ -30,9 +30,10 @@
                                     <constraint firstAttribute="height" constant="100" id="8an-q9-bnC"/>
                                     <constraint firstAttribute="width" constant="100" id="m5W-Vr-qb5"/>
                                 </constraints>
-                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="26" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="1" backgroundImage="dateButton"/>
+                                <state key="disabled" backgroundImage="selectedDateButton"/>
+                                <state key="selected" backgroundImage="selectedDateButton"/>
                                 <connections>
                                     <action selector="controlButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RK2-aQ-3l9"/>
                                 </connections>
@@ -52,7 +53,7 @@
                                 <state key="normal" title="Calendar"/>
                                 <connections>
                                     <action selector="calendarButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RH1-df-F2k"/>
-                                    <segue destination="Axk-Cq-6ny" kind="show" id="xH5-38-zY3"/>
+                                    <segue destination="Axk-Cq-6ny" kind="show" id="AE3-UL-Yk1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -113,7 +114,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zua-9K-3w3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DatesTableViewCell" id="zua-9K-3w3">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zua-9K-3w3" id="UiD-H4-Pg2">
@@ -136,5 +137,6 @@
     <resources>
         <image name="control" width="480" height="480"/>
         <image name="dateButton" width="129" height="127"/>
+        <image name="selectedDateButton" width="129" height="127"/>
     </resources>
 </document>

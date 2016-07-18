@@ -50,6 +50,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     self.customDatesTableViewController = [segue destinationViewController];
+    self.customDatesTableViewController.selectedDates = self.datesArray;
 }
 
 - (void)rotation:(CGFloat)angle {
@@ -71,14 +72,18 @@
         date = self.imageAngle / 11.6 + 1;
     }
     [self.controlButton setTitle:[NSString stringWithFormat:@"%ld", (long)date] forState:UIControlStateNormal];
-    
+    [self updateButtonStateForDate:date];
 }
 
 - (void)updateButtonStateForDate:(NSInteger)date {
-    if ([self.datesArray containsObject:@(date)]) {
-        self.controlButton.selected = YES;
-    } else {
-        self.controlButton.selected = NO;
+    for (Dates *customDate in self.datesArray) {
+        if ([customDate.day integerValue] == date) {
+            self.controlButton.enabled = NO;
+            break;
+            NSLog(@"selected");
+        } else {
+            self.controlButton.enabled = YES;
+        }
     }
 }
 - (IBAction)controlButtonTapped:(id)sender {

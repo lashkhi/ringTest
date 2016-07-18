@@ -38,16 +38,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ClueTest/ViewController.m"
-            timestampString = "490564710.007585"
+            timestampString = "490568835.821194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "-controlButtonTapped:"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-updateButtonStateForDate:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ClueTest/ViewController.m"
+            timestampString = "490568835.821194"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "-updateButtonStateForDate:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +73,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ClueTest/CalendarDataManager.m"
-            timestampString = "490563429.969996"
+            filePath = "ClueTest/ViewController.m"
+            timestampString = "490568835.821194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "-saveDate:"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-controlButtonTapped:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
