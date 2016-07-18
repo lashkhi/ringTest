@@ -18,9 +18,10 @@
 
 @implementation ControlRotationRecognizer
 
-- (instancetype)initWithControl:(UIImageView *)control centerPoint:(CGPoint)centerPoint {
+- (instancetype)initWithControl:(UIImageView *)control {
     if (self = [super init]) {
-        self.centerPoint = centerPoint;
+        self.centerPoint = CGPointMake(control.frame.origin.x + control.frame.size.width / 2,
+                                                             control.frame.origin.y + control.frame.size.height / 2);
         self.outerR = (control.frame.size.width / 2)  + 5;
         self.innerR = 100;
     }
@@ -48,14 +49,12 @@
 
 #pragma mark - UIGestureRecognizer
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesMoved:touches withEvent:event];
     
     if (self.state == UIGestureRecognizerStateFailed) {
@@ -68,8 +67,6 @@
     if (self.innerR <= distance && distance <= self.outerR) {
         
         CGFloat angle = [self angleBetweenLinesInDegrees:self.centerPoint endPointLineA:prevPoint beginLineB:self.centerPoint endPointLineB:nowPoint];
-        
-        NSLog(@"Angle: %f", angle);
         
         if (angle > 180)
         {
@@ -89,27 +86,15 @@
     }
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesEnded:touches withEvent:event];
-    
     self.angle = 0;
 }
 
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesCancelled:touches withEvent:event];
-    
     self.state = UIGestureRecognizerStateFailed;
     self.angle = 0;
-}
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    
-    if ([touch.view isKindOfClass:[UIButton class]]) {//change it to your condition
-        return NO;
-    }
-    return YES;
 }
 
 

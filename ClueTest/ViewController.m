@@ -38,9 +38,8 @@
 
 - (void)setupControl {
     if (!self.rotationRecognizer) {
-        CGPoint centerPoint = CGPointMake(self.control.frame.origin.x + self.control.frame.size.width / 2,
-                                          self.control.frame.origin.y + self.control.frame.size.height / 2);
-        self.rotationRecognizer = [[ControlRotationRecognizer alloc] initWithControl:self.control centerPoint:centerPoint];
+        
+        self.rotationRecognizer = [[ControlRotationRecognizer alloc] initWithControl:self.control];
         self.rotationRecognizer.customDelegate = self;
         self.rotationRecognizer.delegate = self;
         [self.view addGestureRecognizer:self.rotationRecognizer];

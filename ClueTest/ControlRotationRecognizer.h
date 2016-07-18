@@ -17,6 +17,6 @@
 
 @property (nonatomic, weak) id <ControlRotationRecognizerDelegate> customDelegate;
 
-- (instancetype)initWithControl:(UIImageView *)control centerPoint:(CGPoint)centerPoint;
+- (instancetype)initWithControl:(UIImageView *)control;
 
 @end

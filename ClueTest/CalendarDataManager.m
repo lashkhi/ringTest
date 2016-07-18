@@ -51,6 +51,7 @@
     NSArray *result = [self.managedObjectContext executeFetchRequest:fetch error:nil];
     return result;
 }
+
 - (void)saveContext {
     NSError *error = nil;
         if (![self.managedObjectContext save:&error]) {
